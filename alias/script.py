@@ -11,19 +11,24 @@ def save_file(file, lst):
         for word in lst:
             print(word, file=f)
 
+
+
 if __name__ == '__main__':
-    pass
+    added_words = 0
     lst = set(read_file(f))
     exit_repl = ["q", "Q", "Й", "й"]
     while True:
         last_len = len(lst)
         word = input("введите слово >>>\n")
         if word in exit_repl: # выход
+            print("было добавлено - {}".format(added_words))
+            print("всего слов - {}".format(len(lst)))
             save_file(f, lst)
             break
 
         lst.add(word)
         if last_len != len(lst):
+            added_words += 1
             print("слово добавлено")
         else:
             print("такое слово уже есть")
