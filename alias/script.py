@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-f = './resource/words.txt'
+children_dictionary = './resource/words.txt'
 
 def read_file(file):
     with open(file, "r", encoding="utf8") as f:
@@ -15,7 +15,7 @@ def save_file(file, lst):
 
 if __name__ == '__main__':
     added_words = 0
-    lst = set(read_file(f))
+    lst = set(read_file(children_dictionary))
     exit_repl = ["q", "Q", "Й", "й"]
     while True:
         last_len = len(lst)
@@ -23,7 +23,7 @@ if __name__ == '__main__':
         if word in exit_repl: # выход
             print("было добавлено - {}".format(added_words))
             print("всего слов - {}".format(len(lst)))
-            save_file(f, lst)
+            save_file(children_dictionary, lst)
             break
 
         lst.add(word)
