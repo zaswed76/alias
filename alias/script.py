@@ -17,7 +17,7 @@ def save_file(file, lst):
 
 
 if __name__ == '__main__':
-    current_name_dict = "взрослый"
+    current_name_dict = "детский"
     current_dictionary = words[current_name_dict]
     added_words = 0
     lst = set(read_file(current_dictionary))
