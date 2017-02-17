@@ -4,8 +4,8 @@
 import os
 
 
-f = './resource/words.txt'
-target_direct = './resource/target'
+f = './resource/children_dictionary.txt'
+target_direct = './resource/target_children'
 sep_num = 8
 
 def read_file(file):
@@ -45,7 +45,8 @@ def enumerate_words(word_groups):
 
 
 if __name__ == '__main__':
-    gr_list = enumerate_words(partition(read_file(f), sep_num))
+    # gr_list = enumerate_words(partition(read_file(f), sep_num))
+    gr_list = partition(read_file(f), sep_num)
     if not os.path.isdir(target_direct):
         os.mkdir(target_direct)
     for n, i in enumerate(gr_list):
